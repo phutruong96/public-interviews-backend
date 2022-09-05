@@ -4,14 +4,16 @@
 #
 # Table name: accounts
 #
-#  id           :bigint           not null, primary key
-#  email        :string
-#  first_name   :string
-#  last_name    :string
-#  phone_number :string
-#  status       :integer          default(0), not null
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id              :bigint           not null, primary key
+#  amount_cents    :integer          default(0), not null
+#  amount_currency :string           default("USD"), not null
+#  email           :string
+#  first_name      :string
+#  last_name       :string
+#  phone_number    :string
+#  status          :integer          default("pending"), not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
 #
 # Indexes
 #
@@ -25,7 +27,7 @@ FactoryBot.define do
     last_name { Faker::Name.last_name }
     email { Faker::Internet.email }
     phone_number { Faker::PhoneNumber.cell_phone_in_e164 }
-
+    amount_cents { Faker::Number.number(digits: 2) }
     status { 0 }
   end
 end

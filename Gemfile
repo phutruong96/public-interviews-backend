@@ -39,3 +39,13 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'active_model_serializers', '~> 0.10.13'
+gem 'will_paginate', '~> 3.3', '>= 3.3.1'
+
+# Setting up Ruby objects as test data
+gem 'factory_bot_rails'
+gem 'factory_bot'
+gem 'factory_trace'
+# Design pattern
+gem 'interactor-rails', '~> 2.2', '>= 2.2.1'
+gem 'money-rails', '~> 1.15'
